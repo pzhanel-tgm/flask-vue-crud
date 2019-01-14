@@ -16,27 +16,24 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app)
 
-BOOKS = [
+TODO = [
     {
         'id': uuid.uuid4().hex,
-        'title': 'On the Road',
-        'author': 'Jack Kerouac',
-        'read': True,
-        'price': '19.99'
+        'todo': 'Test Correction',
+        'assignee': '5BHITM',
+        'done': False
     },
     {
         'id': uuid.uuid4().hex,
-        'title': 'Harry Potter and the Philosopher\'s Stone',
-        'author': 'J. K. Rowling',
-        'read': False,
-        'price': '9.99'
+        'todo': 'Projects',
+        'assignee': '5BHITM',
+        'done': False
     },
     {
         'id': uuid.uuid4().hex,
-        'title': 'Green Eggs and Ham',
-        'author': 'Dr. Seuss',
-        'read': True,
-        'price': '3.99'
+        'todo': 'Test Correction',
+        'assignee': '5BHITM',
+        'done': False
     }
 ]
 
@@ -47,61 +44,60 @@ def ping_pong():
     return jsonify('pong!')
 
 
-@app.route('/books', methods=['GET', 'POST'])
-def all_books():
+@app.route('/todo', methods=['GET', 'POST'])
+def all_todos():
     response_object = {'status': 'success'}
     if request.method == 'POST':
         post_data = request.get_json()
-        BOOKS.append({
+        TODO.append({
             'id': uuid.uuid4().hex,
-            'title': post_data.get('title'),
+            'todo': post_data.get('todo'),
             'author': post_data.get('author'),
             'read': post_data.get('read'),
             'price': post_data.get('price')
         })
-        response_object['message'] = 'Book added!'
+        response_object['message'] = 'Todo added!'
     else:
-        response_object['books'] = BOOKS
+        response_object['todos'] = TODO
     return jsonify(response_object)
 
 
-@app.route('/books/<book_id>', methods=['GET', 'PUT', 'DELETE'])
-def single_book(book_id):
+@app.route('/todo/<todo_id>', methods=['GET', 'PUT', 'DELETE'])
+def single_todo(todo_id):
     response_object = {'status': 'success'}
     if request.method == 'GET':
         # TODO: refactor to a lambda and filter
-        return_book = ''
-        for book in BOOKS:
-            if book['id'] == book_id:
-                return_book = book
-        response_object['book'] = return_book
+        return_todo = ''
+        for todo in TODO:
+            if todo['id'] == todo_id:
+                return_todo = todo
+        response_object['todo'] = return_todo
     if request.method == 'PUT':
         post_data = request.get_json()
-        remove_book(book_id)
-        BOOKS.append({
+        remove_todo(todo_id)
+        TODO.append({
             'id': uuid.uuid4().hex,
             'title': post_data.get('title'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read'),
-            'price': post_data.get('price')
+            'assignee': post_data.get('assignee'),
+            'done': post_data.get('done')
         })
-        response_object['message'] = 'Book updated!'
+        response_object['message'] = 'Todo updated!'
     if request.method == 'DELETE':
-        remove_book(book_id)
-        response_object['message'] = 'Book removed!'
+        remove_todo(todo_id)
+        response_object['message'] = 'Todo removed!'
     return jsonify(response_object)
 
 
 @app.route('/charge', methods=['POST'])
 def create_charge():
     post_data = request.get_json()
-    amount = round(float(post_data.get('book')['price']) * 100)
+    amount = round(float(post_data.get('todo')['price']) * 100)
     stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
     charge = stripe.Charge.create(
         amount=amount,
         currency='usd',
         card=post_data.get('token'),
-        description=post_data.get('book')['title']
+        description=post_data.get('todo')['title']
     )
     response_object = {
         'status': 'success',
@@ -120,13 +116,13 @@ def get_charge(charge_id):
     return jsonify(response_object), 200
 
 
-def remove_book(book_id):
-    for book in BOOKS:
-        if book['id'] == book_id:
-            BOOKS.remove(book)
+def remove_todo(todo_id):
+    for todo in TODO:
+        if todo['id'] == todo_id:
+            TODO.remove(todo)
             return True
     return False
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=80)
