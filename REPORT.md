@@ -17,7 +17,12 @@ Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 starten mit cypress open
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: testpaths = tesing/pytest; python_files = test_*.py; python_classes = Test''
 push auf TravisCI
--
--
+- Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. -> Keine Fehler.
+import pytest; from run import app; @pytest.fixture; def client(req):
+test_cl = app.test_cl(); return test_cl;
+def testRand(client):
+res = client.get('/api/random');
+assert res.status_code = 200
+- 
 -
 -
