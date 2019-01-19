@@ -1,0 +1,129 @@
+commit 94fb44405c133aa2501acde51420eb7c28780b2a
+Author: pzhanel-tgm <pzhanel@student.tgm.ac.at>
+Date:   Mon Jan 14 08:35:23 2019 +0100
+
+    task_1_and_2_done
+
+ .idea/flask-vue-crud-master.iml |  12 ++++
+ .idea/workspace.xml             |  55 +++++++++++++++--
+ REPORT.md                       |  20 +++++++
+ client/src/app.py               | 128 ++++++++++++++++++++++++++++++++++++++++
+ server/request.py               |   0
+ 5 files changed, 210 insertions(+), 5 deletions(-)
+
+commit 9c469e2246611d6a609311193136ca4ddddcfcfe
+Author: pzhanel-tgm <pzhanel@student.tgm.ac.at>
+Date:   Mon Jan 14 08:20:17 2019 +0100
+
+    task 1 & 2 complete
+
+ .idea/flask-vue-crud.iml |  12 ++++
+ .idea/misc.xml           |   7 ++
+ .idea/modules.xml        |   8 +++
+ .idea/vcs.xml            |   6 ++
+ .idea/workspace.xml      | 178 +++++++++++++++++++++++++++++++++++++++++++++++
+ server/app.py            |  78 ++++++++++-----------
+ 6 files changed, 248 insertions(+), 41 deletions(-)
+
+commit 4b122047acb56c7fd441dbcc61c1b6bd10467eba
+Merge: 6793022 7f9fa9b
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Mon Aug 13 07:32:24 2018 -0600
+
+    Merge pull request #3 from testdrivenio/add-license-1
+    
+    Create LICENSE
+
+commit 7f9fa9bd8c28c81dc89f3081746da47a98405632
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Mon Aug 13 07:32:03 2018 -0600
+
+    Create LICENSE
+
+ LICENSE | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 6793022a2e2b278fd3e460a4d9f75fecbe6d4040
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Mon Jun 11 06:55:33 2018 -0600
+
+    added v2
+
+ README.md                               |  30 ++++--
+ client/index.html                       |   3 +-
+ client/src/components/Books.vue         | 108 ++++++++++++++-------
+ client/src/components/Order.vue         | 161 ++++++++++++++++++++++++++++++++
+ client/src/components/OrderComplete.vue |  39 ++++++++
+ client/src/router/index.js              |  12 +++
+ server/app.py                           |  54 +++++++++--
+ server/requirements.txt                 |   1 +
+ 8 files changed, 357 insertions(+), 51 deletions(-)
+
+commit 577c4bf905d598eb5f82c796a718f436a7ffc0b4
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Sat Jun 9 11:35:19 2018 -0600
+
+    refactored duplicate id
+
+ client/src/components/Books.vue | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 07453066641aa0d8e454f2f1984602f32beb57d1
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Thu Jun 7 07:30:38 2018 -0600
+
+    updates to the gitignore and readme, minor code changes to the Books component
+
+ .gitignore                      | 1 +
+ README.md                       | 3 ++-
+ client/src/components/Books.vue | 4 ++--
+ 3 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 97891679298f43a7edd0c90fd0cbee44d192dff6
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Tue May 29 07:21:36 2018 -0600
+
+    updated readme
+
+ README.md | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1f4d890da47b80abfc4d0dfc950fc40d9d924f9a
+Author: Michael Herman <hermanmu@gmail.com>
+Date:   Sat May 26 18:25:36 2018 -0600
+
+    init
+
+ .gitignore                           |   4 +
+ README.md                            |  30 +++++
+ client/.babelrc                      |  12 ++
+ client/.editorconfig                 |   9 ++
+ client/.eslintignore                 |   4 +
+ client/.eslintrc.js                  |  50 +++++++
+ client/.postcssrc.js                 |  10 ++
+ client/README.md                     |  21 +++
+ client/build/build.js                |  41 ++++++
+ client/build/check-versions.js       |  54 ++++++++
+ client/build/logo.png                | Bin 0 -> 6849 bytes
+ client/build/utils.js                | 101 ++++++++++++++
+ client/build/vue-loader.conf.js      |  22 +++
+ client/build/webpack.base.conf.js    |  92 +++++++++++++
+ client/build/webpack.dev.conf.js     |  95 +++++++++++++
+ client/build/webpack.prod.conf.js    | 145 ++++++++++++++++++++
+ client/config/dev.env.js             |   7 +
+ client/config/index.js               |  76 +++++++++++
+ client/config/prod.env.js            |   4 +
+ client/index.html                    |  12 ++
+ client/package.json                  |  74 ++++++++++
+ client/src/App.vue                   |  17 +++
+ client/src/assets/logo.png           | Bin 0 -> 6849 bytes
+ client/src/components/Alert.vue      |  12 ++
+ client/src/components/Books.vue      | 254 +++++++++++++++++++++++++++++++++++
+ client/src/components/HelloWorld.vue | 113 ++++++++++++++++
+ client/src/components/Ping.vue       |  34 +++++
+ client/src/main.js                   |  17 +++
+ client/src/router/index.js           |  22 +++
+ client/static/.gitkeep               |   0
+ server/app.py                        |  90 +++++++++++++
+ server/requirements.txt              |   2 +
+ 32 files changed, 1424 insertions(+)
