@@ -1,4 +1,4 @@
-Anwendungsentwicklung - Verwendung von APIs
+## Anwendungsentwicklung - Verwendung von APIs
 
 - In app.run() port=8080 hinzufügen.
 ```python
@@ -9,7 +9,7 @@ app.run(port=8080)
 - Möglich durch neues .vue File. index.js braucht weitere route
 - Datenbankzugriff nur mittels Username & Passwort
 
-Anwendungsentwicklung - Anforderungsmanagement und SW-Design
+## Anwendungsentwicklung - Anforderungsmanagement und SW-Design
 
 - Neues Python-File erstellt, import von request und json, verbinden mit dem Server mittels response = request.get(url), response.json um Daten als json zu bekommen
 ```python
@@ -26,7 +26,7 @@ asJson = response.json
 CORS(app)
 ```
 
-Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
+## Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 
 - Tox, pytest, Cypress, TravisCI, lokale Ausführung der pytests mittels Tox, automatische Ausführung von testcases bei jedem push mittels travisCI, Testen der graphischen Oberfläche mittels Cypress. 
 ```
