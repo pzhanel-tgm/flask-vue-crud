@@ -22,7 +22,8 @@ asJson = response.json
 ```
 - Verwendung von CORS. Aktivierung von CORS verläuft folgendermaßen (App.py):
 ```py
-# enable CORS CORS(app)
+# enable CORS 
+CORS(app)
 ```
 
 Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
