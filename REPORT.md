@@ -56,8 +56,15 @@ assert res.status_code = 200
 ```
 Ausfürhung entweder mittels tox oder pytest (pytest testRnd.py)
 
-- 
-
+- In cypress/integration erstellen wir ein neues Directory namens frontend
+```js
+describe('Homepage', function() {
+    it('Open Homepage', function() {
+        cy.visit('http://localhost:8080/')
+        cy.get('button').click()
+    })
+})
+```
 - .travis.yml file createn
 ```yml
 python: 3.7
