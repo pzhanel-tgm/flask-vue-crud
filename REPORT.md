@@ -32,7 +32,12 @@ starten mit
 ```
 ./node_modules/.bin/cypress
 ```
-Pytests in eigener Klasse definieren. Tox.ini aktualisieren: testpaths = tesing/pytest; python_files = test_*.py; python_classes = Test''
+Pytests in eigener Klasse definieren. Tox.ini aktualisieren: 
+```tox
+testpaths = tesing/pytest
+python_files = test_*.py
+python_classes = Test
+```
 push auf TravisCI
 - Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. -> Keine Fehler.
 import pytest; from run import app; @pytest.fixture; def client(req):
