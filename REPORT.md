@@ -34,6 +34,7 @@ starten mit
 ```
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: 
 ```tox
+[pytest]
 testpaths = tesing/pytest
 python_files = test_*.py
 python_classes = Test
