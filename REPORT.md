@@ -40,12 +40,20 @@ python_files = test_*.py
 python_classes = Test
 ```
 push auf TravisCI
-- Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. -> Keine Fehler.
-import pytest; from run import app; @pytest.fixture; def client(req):
-test_cl = app.test_cl(); return test_cl;
+- Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. Wenn dem so ist -> Keine Fehler.
+```python
+import pytest
+from run import app
+
+@pytest.fixture
+def client(req):
+test_cl = app.test_cl()
+return test_cl
+
 def testRand(client):
-res = client.get('/api/random');
+res = client.get('/api/random')
 assert res.status_code = 200
+```
 Ausführung entweder mittels tox oder pytest (pytest testRnd.py)
 - 
 - .travis.yml file createn
