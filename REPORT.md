@@ -54,7 +54,7 @@ def testRand(client):
 res = client.get('/api/random')
 assert res.status_code = 200
 ```
-Ausführung entweder mittels tox oder pytest (pytest testRnd.py)
-- 
+Ausfürhung entweder mittels tox oder pytest (pytest testRnd.py)
+
 - .travis.yml file createn
 - Einfaches Überprüfen von OG und UG mittels pytest
