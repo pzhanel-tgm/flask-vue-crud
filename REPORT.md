@@ -3,12 +3,12 @@ Anwendungsentwicklung - Verwendung von APIs
 - app.run(port=8080), In app.run() port=8080 hinzufügen.
 - Alle Elemente die Books waren in Todo umgewandelt, Die Daten im Dictionary geändert, preis entfernt
 - In Books.vue Books auf Todo geändert und den preis entfernt, Funktionsnamen ebenfalls geändert, Daten auf todo, assignee und done geändert. 
-- 
+- Möglich durch neues .vue File. index.js braucht weitere route
 -
 
 Anwendungsentwicklung - Anforderungsmanagement und SW-Design
 
-- Neues Python-File erstellt, ...
+- Neues Python-File erstellt, import von request und json, mit dem Server mittels response = request.get(url) verbinden, response.json um Daten als json zu bekommen
 -
 
 Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
