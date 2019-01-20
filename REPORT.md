@@ -33,7 +33,7 @@ starten mit
 ./node_modules/.bin/cypress
 ```
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: 
-```tox
+```ini
 [pytest]
 testpaths = tesing/pytest
 python_files = test_*.py
