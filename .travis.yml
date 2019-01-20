@@ -22,5 +22,3 @@ jobs:
         - cd src/router
         - npm ci
       script: npm run cy:run
-
-
