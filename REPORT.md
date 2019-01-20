@@ -24,7 +24,10 @@ asJson = response.json
 
 Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 
-- Tox, pytest, Cypress, TravisCI, lokale Ausführung der pytests mittels Tox, automatische Ausführung von testcases bei jedem push mittels travisCI, Testen der graphischen Oberfläche mittels Cypress. npm install cypress. 
+- Tox, pytest, Cypress, TravisCI, lokale Ausführung der pytests mittels Tox, automatische Ausführung von testcases bei jedem push mittels travisCI, Testen der graphischen Oberfläche mittels Cypress. 
+```
+npm install cypress. 
+```
 starten mit cypress open
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: testpaths = tesing/pytest; python_files = test_*.py; python_classes = Test''
 push auf TravisCI
