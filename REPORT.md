@@ -18,6 +18,9 @@ app.run(port=8080)
 
 ## Anwendungsentwicklung - Anforderungsmanagement und SW-Design
 
+#### Passen Sie das bereitgestellte Beispiel (flask-vue-crud) soweit an, dass eine Verwendung der bestehenden API durch einen eigenen Python-Client ermöglicht wird. Veränderungen der definierten Schnittstelle sind so weit wie möglich zu vermeiden.
+
+#### Implementieren Sie einen Client in Python, der sich mit der vorhandenen Server-Einheit verbindet und die Daten in eine eigene JSON Struktur lädt.
 - Neues Python-File erstellt, import von request und json, verbinden mit dem Server mittels response = request.get(url), response.json um Daten als json zu bekommen
 ```python
 import requests
@@ -27,6 +30,7 @@ url = "http://127.0.0.0:8080/todo"
 response = requests.get(url)
 asJson = response.json
 ```
+#### Was würden Sie bei der Server-API anders definieren, damit verschiedene Clients auf die angebotenenen Funktionen zugreifen könnten?
 - Verwendung von CORS. Aktivierung von CORS verläuft folgendermaßen (App.py):
 ```py
 # enable CORS 
@@ -35,6 +39,9 @@ CORS(app)
 
 ## Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 
+#### Schreiben Sie zu den funktionalen Anforderungen des bereitgestellten Beispiels (flask-vue-spa) entsprechende Testfälle um deren korrekte Implementierung überprüfen zu können.
+
+#### Welche Tools würden Sie einsetzen, und wie würden die entsprechenden Konfigurationsdateien aussehen? Erstellen Sie ein Konzept!
 - Tox, pytest, Cypress, TravisCI, lokale Ausführung der pytests mittels Tox, automatische Ausführung von testcases bei jedem push mittels travisCI, Testen der graphischen Oberfläche mittels Cypress. 
 ```
 npm install cypress. 
@@ -51,6 +58,7 @@ python_files = test_*.py
 python_classes = Test
 ```
 push auf TravisCI
+#### Bereiten Sie einen einfachen Test für den Aufruf der Random Funktion vor. Wie würden Sie diesen starten?
 - Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. Wenn dem so ist -> Keine Fehler.
 ```python
 import pytest
@@ -66,7 +74,7 @@ res = client.get('/api/random')
 assert res.status_code = 200
 ```
 Ausfürhung entweder mittels tox oder pytest (pytest testRnd.py)
-
+#### Implementieren Sie einen einfachen grafischen Test. Worauf achten Sie dabei?
 - In cypress/integration erstellen wir ein neues Directory namens frontend
 ```js
 describe('Homepage', function() {
@@ -76,6 +84,7 @@ describe('Homepage', function() {
     })
 })
 ```
+#### Definieren Sie eine Konfiguration mit TravisCI für eine kontinuierliche Integration. Was müssen Sie dabei für die Python Tests und was für die grafischen Tests vorsehen?
 - .travis.yml file createn
 ```yml
 python: 3.7
@@ -108,4 +117,5 @@ jobs:
         - npm ci
       script: npm run cy:run
 ```
+#### Welche Tests würden Sie für die Grenzen der Random Funktion vorsehen?
 - Einfaches Überprüfen von OG und UG mittels pytest
