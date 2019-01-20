@@ -30,7 +30,7 @@ npm install cypress.
 ```
 starten mit
 ```
-./node_modules/.bin/cypress
+npx cypress open
 ```
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: 
 ```ini
@@ -55,6 +55,8 @@ res = client.get('/api/random')
 assert res.status_code = 200
 ```
 Ausfürhung entweder mittels tox oder pytest (pytest testRnd.py)
+
+- 
 
 - .travis.yml file createn
 ```yml
