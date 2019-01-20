@@ -6,8 +6,8 @@ app.run(port=8080)
 ```
 - Alle Elemente die Books waren in Todo umgewandelt, Die Daten im Dictionary geändert, preis entfernt, Alle Methodennamen mit "books", auf "todo" geändert.
 - In Books.vue Books auf Todo geändert und den preis entfernt, Funktionsnamen ebenfalls geändert, Daten auf todo, assignee und done geändert. 
-- Möglich durch neues .vue File. index.js braucht weitere route
--
+- Möglich durch neues .vue File. index.js braucht weitere route^^
+- Datenbankzugriff nur mittels Username & Passwort
 
 Anwendungsentwicklung - Anforderungsmanagement und SW-Design
 
