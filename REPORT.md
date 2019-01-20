@@ -28,7 +28,10 @@ Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 ```
 npm install cypress. 
 ```
-starten mit cypress open
+starten mit
+```
+./node_modules/.bin/cypress
+```
 Pytests in eigener Klasse definieren. Tox.ini aktualisieren: testpaths = tesing/pytest; python_files = test_*.py; python_classes = Test''
 push auf TravisCI
 - Test für Random Funktion. testRnd.py. Vergleichen ob Statuscode = 200. -> Keine Fehler.
