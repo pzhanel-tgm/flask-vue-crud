@@ -57,4 +57,35 @@ assert res.status_code = 200
 Ausfürhung entweder mittels tox oder pytest (pytest testRnd.py)
 
 - .travis.yml file createn
+```yml
+python: 3.7
+node_js: 10
+```
+- Teil für Tox:
+```yml
+jobs:
+  include:
+    - stage: Tox Test
+      name: "Unit Tests"
+      language: python
+      python: 3.7
+      script: tox
+```
+
+- Teil für Cypress:
+```yml
+    - stage: Cypress Test
+      name: "Frontend Testing Cypress"
+      language: node_js
+      node_js: 10
+      npm: true
+      directories:
+        - /.npm
+        - /.cache
+        - node_modules
+      install:
+        - cd src/router
+        - npm ci
+      script: npm run cy:run
+```
 - Einfaches Überprüfen von OG und UG mittels pytest
