@@ -20,7 +20,10 @@ url = "http://127.0.0.0:8080/todo"
 response = requests.get(url)
 asJson = response.json
 ```
--
+- Verwendung von CORS. Aktivierung von CORS verläuft folgendermaßen (App.py):
+```py
+# enable CORS CORS(app)
+```
 
 Softwareentwicklungsprozess - Verifikation und kontinuierliche Entwicklung
 
