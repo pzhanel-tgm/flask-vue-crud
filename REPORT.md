@@ -26,44 +26,44 @@ def all_todos():
 - In Books.vue Books auf Todo geändert und den preis entfernt, Funktionsnamen ebenfalls geändert, Daten auf todo, assignee und done geändert. 
 ```vue
 <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Read?</th>
-              <th scope="col">Purchase Price</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(todo, index) in todos" :key="index">
-              <td>{{ todo.title }}</td>
-              <td>{{ todo.author }}</td>
-              <td>
-                <span v-if="todo.read">Yes</span>
-                <span v-else>No</span>
-              </td>
-              <td>${{ todo.price }}</td>
-              <td>
-                <button type="button"
-                        class="btn btn-warning btn-sm"
-                        v-b-modal.todo-update-modal
-                        @click="edittodo(todo)">
-                    Update
-                </button>
-                <button type="button"
-                        class="btn btn-danger btn-sm"
-                        @click="onDeletetodo(todo)">
-                    Delete
-                </button>
-                <router-link :to="`/order/${todo.id}`"
-                             class="btn btn-primary btn-sm">
-                    Purchase
-                </router-link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Read?</th>
+            <th scope="col">Purchase Price</th>
+            <th></th>
+         </tr>
+     </thead>
+     <tbody>
+        <tr v-for="(todo, index) in todos" :key="index">
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.author }}</td>
+            <td>
+              <span v-if="todo.read">Yes</span>
+              <span v-else>No</span>
+            </td>
+            <td>${{ todo.price }}</td>
+            <td>
+              <button type="button"
+                    class="btn btn-warning btn-sm"
+                    v-b-modal.todo-update-modal
+                    @click="edittodo(todo)">
+                Update
+              </button>
+              <button type="button"
+                    class="btn btn-danger btn-sm"
+                    @click="onDeletetodo(todo)">
+                Delete
+              </button>
+              <router-link :to="`/order/${todo.id}`"
+                        class="btn btn-primary btn-sm">
+                Purchase
+              </router-link>
+            </td>
+          </tr>
+      </tbody>
+</table>
 ```
 #### Ermöglichen Sie die einfache Erweiterung der grafischen Oberfläche und beschreiben Sie notwendige Schritte um neue Komponenten zur Anmeldung oder persönlichen Definition von personenbezogenen TODOs zu ermöglichen.
 - Möglich durch neues .vue File. index.js braucht weitere route
