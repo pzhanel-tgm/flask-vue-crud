@@ -9,6 +9,20 @@ app.run(port=8080)
 ```
 #### Implementieren Sie eine TODO-Liste mit Flask mit folgenden Elementen: {id, todo, assignee, done}. Was haben Sie geändert oder welche Elemente haben Sie neu definiert?
 - Alle Elemente die Books waren in Todo umgewandelt, Die Daten im Dictionary geändert, preis entfernt, Alle Methodennamen mit "books", auf "todo" geändert.
+```python
+def all_todos():
+    response_object = {'status': 'success'}
+    if request.method == 'POST':
+        post_data = request.get_json()
+        TODO.append({
+            'id': uuid.uuid4().hex,
+            'todo': post_data.get('todo'),
+            'author': post_data.get('author'),
+            'read': post_data.get('read'),
+            'price': post_data.get('price')
+        })
+        response_object['message'] = 'Todo added!'
+```
 #### Bereiten Sie die grafische Oberfläche für eine einfache Erstellung, Anzeige, Löschung und Anpassung der TODOs vor. Welche Komponenten müssen dafür erstellt werden?
 - In Books.vue Books auf Todo geändert und den preis entfernt, Funktionsnamen ebenfalls geändert, Daten auf todo, assignee und done geändert. 
 #### Ermöglichen Sie die einfache Erweiterung der grafischen Oberfläche und beschreiben Sie notwendige Schritte um neue Komponenten zur Anmeldung oder persönlichen Definition von personenbezogenen TODOs zu ermöglichen.
