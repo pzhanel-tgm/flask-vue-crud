@@ -85,7 +85,7 @@ response = requests.get(url)
 asJson = response.json
 ```
 #### Was würden Sie bei der Server-API anders definieren, damit verschiedene Clients auf die angebotenenen Funktionen zugreifen könnten?
-- Verwendung von CORS. Aktivierung von CORS verläuft folgendermaßen (App.py):
+- Verwendung von CORS (Cross-Origin RequestS(Eine Anfrage auf eine Ressource ausserhalb des Ursprungs.)). Aktivierung von CORS verläuft folgendermaßen (App.py):
 ```py
 # enable CORS 
 CORS(app)
