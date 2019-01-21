@@ -28,10 +28,9 @@ def all_todos():
 <table class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Read?</th>
-            <th scope="col">Purchase Price</th>
+            <th scope="col">Todo</th>
+            <th scope="col">Assignee</th>
+            <th scope="col">Done?</th>
             <th></th>
          </tr>
      </thead>
