@@ -17,9 +17,8 @@ def all_todos():
         TODO.append({
             'id': uuid.uuid4().hex,
             'todo': post_data.get('todo'),
-            'author': post_data.get('author'),
-            'read': post_data.get('read'),
-            'price': post_data.get('price')
+            'assignee': post_data.get('assignee'),
+            'done': post_data.get('done')
         })
         response_object['message'] = 'Todo added!'
 ```
